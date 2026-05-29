@@ -1,0 +1,18 @@
+name: Minha Primeira Pipeline
+
+on: [push]
+
+jobs:
+  testar-codigo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixando o código do repositório
+        uses: actions/checkout@v3
+
+      - name: Preparando o ambiente Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Rodando o meu script
+        run: python script.py
